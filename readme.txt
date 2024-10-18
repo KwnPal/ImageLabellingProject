@@ -5,7 +5,7 @@ https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.z
 The Flickr8k_Dataset.zip contains the images and Flickr8k_text.zip contains the titles 
 lemmatized or not as well as the train test and validation names.
 
-Τα αρχεία που θα χρησιμοποιηθούν είναι:
+The files that will be used are:
 
 1)Flickr_8k.devImages.txt contains the validation names.
 
