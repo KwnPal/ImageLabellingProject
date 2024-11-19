@@ -17,7 +17,6 @@ modeldec=keras.models.load_model("usefulmodels/model.keras")
 
 def main():
     #encoder
-   
 
     path="datasets/newdataset/"
     #Load libraries

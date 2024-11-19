@@ -7,7 +7,6 @@ import string
 from keras.preprocessing import image
 from tqdm import tqdm
 import nltk
-import torchvision.transforms as transforms
 from keras.applications import VGG19
 from keras.applications import ResNet50
 from keras.applications.vgg16 import preprocess_input

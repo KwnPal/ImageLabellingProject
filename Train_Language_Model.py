@@ -1,4 +1,3 @@
-import tensorflow as tf
 from numpy import array
 import pickle
 from tqdm import tqdm
@@ -17,12 +16,6 @@ max_length=40
 def main():
     pathe="datasets/newdataset/"
     shape=[]
-    if tf.config.list_physical_devices('GPU'):
-        device = '/GPU:0'
-        print("------------------> GPU")
-    else:
-        device = '/CPU:0'
-        print("------------------> CPU")
     
     with open(pathe+"train_captions.p", "rb") as pickle_f:
         train_captions = pickle.load(pickle_f)
@@ -68,9 +61,8 @@ def main():
     steps=len(train_encoded_captions)//no_of_photos
     for i in range(epochs):
         generator=data_generator(train_encoded_captions,train_features,no_of_photos,vocab_size)
-        with tf.device(device):
-            model.fit(generator,epochs=1,steps_per_epoch=steps,verbose=1)
-            model.save("usefulmodels/model"+str(i)+".keras")
+        model.fit(generator,epochs=1,steps_per_epoch=steps,verbose=1)
+        model.save("usefulmodels/model"+str(i)+".keras")
     
 
 
